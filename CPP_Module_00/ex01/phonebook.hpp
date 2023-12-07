@@ -11,8 +11,8 @@ class PhoneBook
 
 	private:
 		Contact _contact[pce];
-		int		_list_number = 0;
-		int		_busy = 0;
+		int		_list_number;
+		int		_busy;
 	public:
 		PhoneBook();
 		~PhoneBook();

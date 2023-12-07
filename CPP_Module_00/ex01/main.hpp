@@ -6,6 +6,8 @@
 #include <iomanip>
 #include"Contact.hpp"
 #include"phonebook.hpp"
+#include<cstdlib>
+#include <sstream>
 
 
 

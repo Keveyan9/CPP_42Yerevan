@@ -36,6 +36,7 @@ int length_need (std::string name, std::string word)
 
 void Contact::printContact(bool flag)
 {
+    (void) flag;
     std::cout << "\n";
     std::cout << std::right << std::setw(10) << "index"
               << "|"

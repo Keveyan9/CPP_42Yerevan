@@ -1,13 +1,17 @@
 #include "main.hpp"
 
 
-PhoneBook::PhoneBook(){}
+PhoneBook::PhoneBook(){
+
+    _busy = 0;
+    _list_number = 0;
+}
 
 PhoneBook::~PhoneBook(){}
 
 bool    strIsDigit(std::string &str)
 {
-    for (int i = 0; i < str.length(); i++)
+    for (long unsigned int i = 0; i < str.length(); i++)
     {
         if (!isdigit(str[i]))
             return (false);
@@ -62,9 +66,12 @@ void PhoneBook::addContact()
     }
 	else
 	{
-		if (_list_number == pce)
-			_list_number = 0;
-			index = std::to_string(_list_number + 1);
+        std::ostringstream oss;
+
+		if(_list_number == pce)
+            _list_number = 0;
+		oss << (_list_number + 1);
+        index = oss.str();
 		_contact[_list_number] = Contact(index,firstName, lastName, nickname, phoneNumber, darkestSecret);
         if(_busy != pce)
             _busy++;
@@ -103,7 +110,7 @@ void PhoneBook::searchContact()
     if (std::cin.eof())
        exit(0);
      if(strIsDigit(s_index))
-	    	i = std::stoi(s_index);
+	    	i = std::atoi(s_index.c_str());
 	    else
 	    {
            std::cout << "is not number\n";
