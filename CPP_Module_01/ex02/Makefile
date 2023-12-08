@@ -1,5 +1,7 @@
-NAME = phonebook
+NAME      = Hi_This_Is_Brain
+
 CC = c++
+
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 RM = rm -rf
 
@@ -8,7 +10,7 @@ OBJ = ${patsubst %.cpp, %.o, ${SRC}}
 
 all : ${NAME}
 
-${NAME} : ${OBJ} Makefile *.hpp
+${NAME} : ${OBJ} Makefile 
 	${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
 
 clean : 
