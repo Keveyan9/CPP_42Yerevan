@@ -1,13 +1,23 @@
 #include "Zombie.hpp"
 
-	Zombie::Zombie(){}
-	Zombie::~Zombie(){}
+Zombie::Zombie() 
+{
+    std::cout << "Default constructor is called\n";
+}
 
-	Zombie::printzombi()
-	{
-		std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
-	}
+Zombie::Zombie( const std::string &name)
+{
+    _name = name;
+	std::cout << "Zombie object " << _name << " created\n";
+}
 
-	Zombie::Zombie(str::string &name)
-	{
-	}
+void Zombie::printzombi()
+{
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
+}
+
+
+Zombie::~Zombie()
+{
+    std::cout << _name << " is destroyed\n";
+}

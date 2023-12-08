@@ -1,27 +1,24 @@
-NAME      = Zombie
+NAME      = brainz
 
-CC        = g++ 
+CC = c++
 
-FLAGS     = -Wextra -Werror -Wall -std=c++98
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+RM = rm -rf
 
-SRC_FILES = $(wildcard *.cpp)
+SRC = ${wildcard *.cpp}
+OBJ = ${patsubst %.cpp, %.o, ${SRC}}
 
-OBJ_FILES = $(SRC_FILES:.cpp=.o)
+all : ${NAME}
 
-%o: %.cpp
-		$(CC) $(FLAGS) -c $< -o $@
+${NAME} : ${OBJ} Makefile *.hpp
+	${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
 
-all: $(NAME)
+clean : 
+	${RM} ${OBJ}
 
-$(NAME): $(OBJ_FILES)
-		$(CC) $(FLAGS) -o $(NAME) $^
+fclean : clean
+	${RM} ${NAME}
 
-clean:
-	rm -rf $(OBJ_FILES)
+re : fclean all
 
-fclean: clean
-	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all fclean clean re
+.PHONY : all bonus clean fclean re
