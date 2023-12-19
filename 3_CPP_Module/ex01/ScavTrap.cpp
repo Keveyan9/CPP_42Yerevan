@@ -1,7 +1,12 @@
  #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() _name("defolt"),_healthPoint(100),_energyPoint(50),_attackDemage(30)
+ScavTrap::ScavTrap()
 {
+	_name = "defolt";
+	_healthPoint = 100;
+	_attackDemage = 20;
+	_energyPoint = 50;
+	
 	std::cout << YELLOW << "default creating cllas" << RESET <<std::endl;
 }
 

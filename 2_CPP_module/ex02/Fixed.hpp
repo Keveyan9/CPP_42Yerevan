@@ -35,9 +35,9 @@ public:
     float operator*(const Fixed &obj) const;
     float operator/(const Fixed &obj) const;
     Fixed &operator++();
-    Fixed operator++(bool x);
+    Fixed operator++(int);
     Fixed &operator--();
-    Fixed operator--(bool x);
+    Fixed operator--(int);
     static Fixed &min(Fixed &nmb1, Fixed &nmb2);
     static const Fixed &min(const Fixed &nmb1, const Fixed &nmb2);
     static Fixed &max(Fixed &nmb1, Fixed &nmb2);
