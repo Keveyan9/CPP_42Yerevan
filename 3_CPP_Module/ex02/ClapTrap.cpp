@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(): _name("defolt"),_healthPoint(10),_energyPoint(10),_attackDemage(0)
 {
-	std::cout << YELLOW << "Clabtrap default creating cllas" << RESET <<std::endl;
+	std::cout << YELLOW << "default creating cllas" << RESET <<std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name),_healthPoint(10),_energyPoint(10),_attackDemage(0)

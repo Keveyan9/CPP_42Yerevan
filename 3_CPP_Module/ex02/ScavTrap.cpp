@@ -1,4 +1,5 @@
- #include "ScavTrap.hpp"
+
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap() 
 {
@@ -6,7 +7,6 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_healthPoint = 100;
 	_attackDemage = 20;
 	_energyPoint = 50;
-	
 	std::cout << YELLOW << "ScavTrap default creating cllas" << RESET <<std::endl;
 }
 

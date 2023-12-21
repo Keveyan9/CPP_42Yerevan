@@ -2,8 +2,9 @@
 # define CLABTRAP_HPP
 
 #include <iostream>
+#include <string.h>
 #include <stdbool.h>
-#include"colors.hpp"
+#include "colors.hpp"
 
 class ClapTrap
 {
