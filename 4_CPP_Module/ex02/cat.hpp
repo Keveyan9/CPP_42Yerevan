@@ -9,7 +9,7 @@ private:
     Brain *_b;
 public:
     Cat();
-    Cat(const Cat&);
+    Cat(const Cat&);;
     Cat &operator=(const Cat &a);
     virtual void makeSound() const; //override;
     ~Cat();
