@@ -13,9 +13,11 @@ public:
     Array() : elements(nullptr), arraySize(0) {}
 
     // Parameterized constructor: creates an array of n elements initialized by default
-    explicit Array(unsigned int n) : arraySize(n) {
+    explicit Array(unsigned int n) : arraySize(n) 
+    {
         elements = new T[arraySize];
-        for (unsigned int i = 0; i < arraySize; ++i) {
+        for (unsigned int i = 0; i < arraySize; ++i) 
+        {
             elements[i] = T(); // Default initialization
         }
     }
@@ -23,7 +25,8 @@ public:
     // Copy constructor
     Array(const Array& other) : arraySize(other.arraySize) {
         elements = new T[arraySize];
-        for (unsigned int i = 0; i < arraySize; ++i) {
+        for (unsigned int i = 0; i < arraySize; ++i) 
+        {
             elements[i] = other.elements[i];
         }
     }
@@ -36,7 +39,8 @@ public:
             arraySize = other.arraySize;
             elements = new T[arraySize];
 
-            for (unsigned int i = 0; i < arraySize; ++i) {
+            for (unsigned int i = 0; i < arraySize; ++i) 
+            {
                 elements[i] = other.elements[i];
             }
         }
@@ -44,12 +48,14 @@ public:
     }
 
     // Destructor
-    ~Array() {
+    ~Array() 
+    {
         delete[] elements;
     }
 
     // Subscript operator: allows access to array elements
-    T& operator[](unsigned int index) {
+    T& operator[](unsigned int index) 
+    {
         if (index >= arraySize) {
             throw std::out_of_range("Index out of bounds");
         }
@@ -57,7 +63,8 @@ public:
     }
 
     // Member function size: returns the number of elements in the array
-    unsigned int size() const {
+    unsigned int size() const 
+    {
         return arraySize;
     }
 };

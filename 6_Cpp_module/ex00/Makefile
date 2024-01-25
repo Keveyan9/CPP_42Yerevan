@@ -1,10 +1,10 @@
-NAME = template
+NAME = converter
 
 TMP = objs
 
 CXX = c++
 
-CXXFLAGS =  -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS = $(wildcard *.cpp)
 
