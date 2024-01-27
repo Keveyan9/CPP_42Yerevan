@@ -5,8 +5,8 @@ int main ()
 	try
     {
         
-        Bureaucrat a("test", 15);
-        a.increment();
+        Bureaucrat a("test", 1);
+        a.dicrement();
         std::cout << a.getGrade() << std::endl;
     }
     catch(std::exception &test)
