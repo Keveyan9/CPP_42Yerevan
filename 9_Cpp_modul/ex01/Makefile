@@ -1,4 +1,4 @@
-NAME = find
+NAME = RPN
 
 TMP = objs
 

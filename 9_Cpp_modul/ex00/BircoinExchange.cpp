@@ -137,7 +137,6 @@ void BitcoinExchange::relise()
 {
 	if(_data_file.good())
 	{
-		int i = 0;
 		std::string	row;
 		row_data	S_valid_row;
 		std::string	ferst_row[2];
@@ -157,7 +156,7 @@ void BitcoinExchange::relise()
 					if(S_valid_row.valu <= 1000 && S_valid_row.valu >= 0 )
 					{
 					// std::cout << i++ << " __   " << S_valid_row.days[0] << " value " << S_valid_row.valu<< std::endl; // Print each line to standard output
-						auto it =_myMap.find(S_valid_row.days[0]);
+						std::map<std::string, double>::iterator it =_myMap.find(S_valid_row.days[0]);
 						if(it == _myMap.end())
 							it = _myMap.lower_bound(S_valid_row.days[0]);
 						if(it != _myMap.begin())
