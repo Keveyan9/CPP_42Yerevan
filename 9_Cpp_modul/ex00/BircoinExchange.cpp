@@ -161,7 +161,7 @@ void BitcoinExchange::relise()
 							it = _myMap.lower_bound(S_valid_row.days[0]);
 						if(it != _myMap.begin())
 							it--;
-						std::cout << BOLDBLUE << S_valid_row.days[0] << "=>" << S_valid_row.valu<< " = " << std::fixed << (it->second * S_valid_row.valu) << RESET << "\n";
+						std::cout << BOLDBLUE << S_valid_row.days[0] << "=>" << S_valid_row.valu<< " = " << (it->second * S_valid_row.valu) << RESET << "\n";
 					}
 					else
 						std::cout << RED <<" WORNING" << S_valid_row.days[0] << "this days valu is not corectli "<< RESET << "\n";

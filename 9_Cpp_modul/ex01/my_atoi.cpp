@@ -11,7 +11,7 @@ static void	chek_plus_minus( const char **str, int *minus_counter)
 		(*str)++;
 		if (!(**str >= '0' && **str <= '9'))
 		{
-			throw std::runtime_error ("non corect number input");
+			throw std::runtime_error ("non corect number input ");
 		}	
 	}
 }
