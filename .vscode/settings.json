@@ -52,6 +52,7 @@
 		"span": "cpp",
 		"chrono": "cpp",
 		"map": "cpp",
-		"ratio": "cpp"
+		"ratio": "cpp",
+		"list": "cpp"
 	}
 }

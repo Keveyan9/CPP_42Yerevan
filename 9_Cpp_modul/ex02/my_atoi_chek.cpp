@@ -2,12 +2,12 @@
 
 // this Atoi  i wrote  for push swap but now chanhge  for c++ 09
 
-static void	chek_plus_minus( const char **str, int *minus_counter)
+static void	chek_plus_minus( const char **str)
 {
 	if (**str == '-' || **str == '+')
 	{
 		if (**str == '-')
-			*minus_counter = -1;
+			throw std::runtime_error ("can not be minus");
 		(*str)++;
 		if (!(**str >= '0' && **str <= '9'))
 		{
@@ -16,34 +16,26 @@ static void	chek_plus_minus( const char **str, int *minus_counter)
 	}
 }
 
- long double	my_atoi(const char *str)
+int 	my_atoi_chek(const char *str)
 {
-	long 	res;
-	int			minus_counter;
-	int			flout_point;
+	int	res;
 
-	flout_point = 0 ;
 	res = 0;
-	minus_counter = 1;
 	while (*str == ' ' || *str == '\n' || *str == '\t'
 		||*str == '\v' || *str == '\f' || *str == '\r')
 		str++;
-	chek_plus_minus(&str, &minus_counter);
+	chek_plus_minus(&str);
 	while (*str >= '0' && *str <= '9' && *str)
 	{
 		res = (res * 10) +(*str - '0');
 		str++;
-		flout_point = flout_point * 10;
-		if(*str == '.' && flout_point == 0)
+		if(*str == '.')
 		{
-			flout_point = 1;
-			str++;
+			throw std::runtime_error ("can not bi point number");
 		}
 	}
-	if(flout_point < 1)
-		flout_point = 1;
 	if (!(*str))
-		return (static_cast<long double>(res*minus_counter)/flout_point);
+		return (res);
 	throw std::runtime_error ("non corect number input");
 	return(0);
 }

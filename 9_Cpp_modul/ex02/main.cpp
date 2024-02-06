@@ -6,16 +6,15 @@ int main(int argc, char **argv)
 	
 	try
 	{
-		if (argc <= 3)
+		if (argc < 3)
 			throw std::runtime_error("it is litel input");
-		
-	
+		PmergeMe test(argv);
+		test.relise();
 	}
 	catch(const std::exception& error_messege)
 	{
 		std::cout << error_messege.what() << std::endl;
 	}
-
 	return(0);
 }
 

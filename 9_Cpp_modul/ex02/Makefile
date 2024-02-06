@@ -1,4 +1,4 @@
-NAME = find
+NAME = PmergeMe
 
 TMP = objs
 
