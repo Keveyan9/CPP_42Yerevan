@@ -25,6 +25,12 @@ static void	chek_plus_minus( const char **str, int *minus_counter)
 	flout_point = 0 ;
 	res = 0;
 	minus_counter = 1;
+	for (int i = 0; str[i];i++)
+		{
+			if(i > 7)
+				throw std::runtime_error ("non corect word  veri long ");
+
+		}
 	while (*str == ' ' || *str == '\n' || *str == '\t'
 		||*str == '\v' || *str == '\f' || *str == '\r')
 		str++;

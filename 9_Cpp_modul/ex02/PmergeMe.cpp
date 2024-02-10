@@ -9,7 +9,7 @@ PmergeMe::PmergeMe()
 PmergeMe::PmergeMe(char **data)
 {
 	_data = data;
-	std::cout <<YELLOW << "constructor cold\n" << RESET;
+	// std::cout <<YELLOW << "constructor cold\n" << RESET;
 }
 
 PmergeMe::PmergeMe(const PmergeMe  &obj)
@@ -63,6 +63,8 @@ void PmergeMe::relise()
 
 	put_in_conteyner();
 	count = 0;
+	if (hasDuplicates(_my_vector))
+		throw std::runtime_error("have dublicet number");
 	std::cout << "Before: ";
 	while(count < _lenqt - _flag_add_zero)
 		std::cout << _my_vector[count++] << " ";
@@ -71,6 +73,7 @@ void PmergeMe::relise()
  	timeval start, end;
     // Measure start time vectors 
     gettimeofday(&start, NULL);
+
 
 	// _______________sort vector_________________
 	merge_insertion_sort(_my_vector);

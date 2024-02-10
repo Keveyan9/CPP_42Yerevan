@@ -7,11 +7,15 @@ RPN& RPN::operator= (const RPN& ){return (*this);}
 RPN::~RPN(){}
 
 
-bool  RPN::is_Operator(char c) {
-    return c == '+' || c == '-' || c == '*' || c == '/';
+bool  RPN::is_Operator(const char *c)
+ {
+    if(c[0] && c[1])
+         throw std::invalid_argument("it is bade operator");
+    return c[0] == '+' || c[0] == '-' || c[0] == '*' || c[0] == '/';
 }
 
-int RPN::perform_Operation(int operand1, int operand2, char op) {
+int RPN::perform_Operation(int operand1, int operand2, char op) 
+{
     switch(op) {
         case '+':
             return operand1 + operand2;
@@ -39,8 +43,9 @@ void RPN::evaluate_RPN(const std::string& expression ,int &result) {
 		{
             operands.push(my_atoi(token.c_str()));
         }
-		 else if (is_Operator(token[0])) 
+		 else if (is_Operator(token.c_str())) 
 		{
+            
             if (operands.size() < 2) 
 			{
                 throw std::invalid_argument("Insufficient operands for operator");

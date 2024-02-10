@@ -20,4 +20,3 @@
 
 
 int 	my_atoi_chek(const char *str);
-int binarySearch(const std::vector<int>& arr, int value);

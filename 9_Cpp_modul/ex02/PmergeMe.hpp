@@ -12,8 +12,8 @@ class PmergeMe
 		std::deque<int>		 _my_decue;
 		long long 			 _vector_tyme_sort;
 		long long 		 	 _decue_tyme_sort;
-		int 				 _count_vector;
-		int					 _count_decue;
+		// int 				 _count_vector;
+		// int					 _count_decue;
 	public:
 
 		PmergeMe(/* args */);
@@ -32,6 +32,8 @@ class PmergeMe
 		void merge_insertion_sort(conteyner &v);
 		template 	<typename conteyner>
 		void  my_insert(conteyner &larg, conteyner &small);
+		template 	<typename conteyner>
+		bool hasDuplicates(const conteyner& nums);
 		// template 	<typename conteyner>
 		// void insertIntoMainChain(conteyner& inputVector);
 	
@@ -152,6 +154,17 @@ void PmergeMe::merge_insertion_sort(conteyner &vec )
 	vec = larg;
 }
 
+template 	<typename conteyner>
+bool PmergeMe::hasDuplicates(const conteyner& nums) {
+    for (size_t i = 0; i < nums.size(); ++i) {
+        for (size_t j = i + 1; j < nums.size(); ++j) {
+            if (nums[i] == nums[j]) {
+                return true; // Duplicate found
+            }
+        }
+    }
+    return false; // No duplicates found
+}
 
 
 
